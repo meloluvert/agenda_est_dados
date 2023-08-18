@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1692356579 source:/var/www/Lucas_2info_Simp_Enc/main.cpp
+	"Agenda.h"
+
+1692356640 /var/www/Lucas_2info_Simp_Enc/Agenda.h
+	<iostream>
+
+1692356895 source:/var/www/Lucas_2info_Simp_Enc/Agenda.cpp
+	"Agenda.h"
+
