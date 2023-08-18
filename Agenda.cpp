@@ -50,7 +50,7 @@ Agenda **Agenda::Inserir(Agenda **vet, std::string nome, std::string tel)
 Agenda **Agenda::Excluir(Agenda *inicio, std::string nome)
 {
     Agenda *aux;
-    aux = aux.Consultar(inicio, nome);
+    // aux = aux.Consultar(inicio, nome);
     if (aux == NULL)
     {
         std::cout << "Não temos esse nome";
