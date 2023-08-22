@@ -47,21 +47,49 @@ Agenda **Agenda::Inserir(Agenda **vet, std::string nome, std::string tel)
     }
     return vet;
 }
-Agenda **Agenda::Excluir(Agenda *inicio, std::string nome)
-{
-    Agenda *aux;
-    // aux = aux.Consultar(inicio, nome);
-    if (aux == NULL)
+Agenda **Agenda::Excluir(Agenda **vet, std::string nome, bool *achei){
+Agenda *atual = vet[0], *ant = NULL;
+        /*percorre*/
+        while ((atual != NULL) && (nome > atual->nome))
+        {
+            ant = atual;
+            atual = atual->elo;
+        }
+
+    if (atual == NULL)
     {
-        std::cout << "Não temos esse nome";
-    }
-    else
+
+        *achei = false;
+        return vet;
+    }else
     {
+    *achei = true;
+        if (atual == vet[0])
+        {
+            vet[0] = atual->elo;
+        }
+        else if (atual == vet[1])
+        {
+            /*passou por todos */
+
+            vet[1] = ant;
+            vet[1]->elo = NULL;
+
+        }
+        else
+        {
+            ant->elo = atual->elo;
+        }
+        delete (atual);
     }
 
     return NULL;
 }
-Agenda *Agenda::Consultar(Agenda *, std::string nome)
+Agenda *Agenda::Consultar(Agenda *I, std::string nome)
 {
-    return NULL;
+    Agenda *aux = I;
+    while(aux!= NULL  && aux->nome != nome)
+        aux = aux->elo;
+
+    return aux;
 }
