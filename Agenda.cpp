@@ -1,7 +1,11 @@
 #include "Agenda.h"
 
-Agenda::Agenda()
-{
+void Agenda::Listar(Agenda *inicio){
+    Agenda*aux = inicio;
+    while( aux != NULL ){
+    std::cout << aux->nome << " - " << aux->telefone << "\ n";
+    aux=aux->elo;
+ }
 }
 
 Agenda **Agenda::Inserir(Agenda **vet, std::string nome, std::string tel)
