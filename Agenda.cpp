@@ -3,7 +3,7 @@
 void Agenda::Listar(Agenda *inicio){
     Agenda*aux = inicio;
     while( aux != NULL ){
-    std::cout << aux->nome << " - " << aux->telefone << "\ n";
+    std::cout << aux->nome << " - " << aux->telefone << "\n";
     aux=aux->elo;
  }
 }
@@ -92,8 +92,9 @@ Agenda *atual = vet[0], *ant = NULL;
 Agenda *Agenda::Consultar(Agenda *I, std::string nome)
 {
     Agenda *aux = I;
-    while(aux!= NULL  && aux->nome != nome)
+    while(aux!= NULL  && aux->nome != nome){
         aux = aux->elo;
+        }
 
     return aux;
 }
